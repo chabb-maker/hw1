@@ -20,7 +20,7 @@ importlib.reload(stream_classes)
 import homework_01 as hw;
 
 '''
-NO OLVIDES PONER TU NUMERO DE CUENTA!
+NO OLVIDES PONER TU NUMERO DE CUENTA! Debe ir como Integer
 '''
 numero_cuenta =
 
