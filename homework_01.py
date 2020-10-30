@@ -15,8 +15,6 @@ import stream_functions
 importlib.reload(stream_functions)
 import stream_classes
 importlib.reload(stream_classes)
-import teacher_code
-importlib.reload(teacher_code)
 
 
 
