@@ -60,15 +60,40 @@ Remember to install pytest using $pip install pytest or $conda install pytest
 
 def create_dataframe_risk_metrics(rics, risk_metrics):
     #  NO OLVIDES CAMBIAR TU NUMERO DE CUENTA EN EL ARCHIVO test_homework01.py
-    df = pd.DataFrame()
-    # columns = risk_metrics
-    # number of rows = len(rics)
+    columns= risk_metrics
+    num_rows=len(rics)
+    df = pd.DataFrame(columns, index = range(num_rows))
+    
+    for i in range(len(rics)):
+        ric=rics[n]
+        jb=stream_classes.jarque_bera_test(ric)
+        jb.load_timeseries()
+        jb.compute()
+        
+        if "ric" in risk_metrics:
+            df.iloc[i, df.columns.get_loc("ric")]=ric
+        if "mean" in risk_metrics:
+            df.iloc[i, df.columns.get_loc("mean")]=jb.mean
+        if "std_dev" in risk_metrics:
+            df.iloc[i, df.columns.get_loc("std_dev")]=jb.std
+        if "skewness" in risk_metrics:
+            df.iloc[i, df.columns.get_loc("skewness")]=jb.skew       
+        if "kurtosis" in risk_metrics:
+            df.iloc[i, df.columns.get_loc("kurtosis")]=jb.kurt
+        if "var_95" in risk_metrics:
+            df.iloc[i, df.columns.get_loc("var_95")]=jb.var_95
+        if "cvar_95" in risk_metrics:
+            df.iloc[i, df.columns.get_loc("sharpe")]=jb.cvar_95
+        if "sharpe" in risk_metrics:
+            df.iloc[i, df.columns.get_loc("sharpe")]=jb.sharpe
+        if "jarque_bera" in risk_metrics:
+            df.iloc[i, df.columns.get_loc("jarque_bera")]=jb.jarque_bera
+        if "p_value" in risk_metrics:
+            df.iloc[i, df.columns.get_loc("p_value")]=jb.p_value
+        if "is_normal" in risk_metrics:
+            df.iloc[i, df.columns.get_loc("is_normal")]=jb.is_normal
 
-    # your code comes here
-    # ...
-
-    #Remember that you have to return a DataFrame.
-    return df
+        return df
 
 
 
