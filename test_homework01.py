@@ -22,7 +22,7 @@ import homework_01 as hw;
 '''
 NO OLVIDES PONER TU NUMERO DE CUENTA! Debe ir como Integer
 '''
-numero_cuenta =
+numero_cuenta = 315192188
 
 def test_1():
     print(".-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-")
